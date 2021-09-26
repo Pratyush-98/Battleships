@@ -62,7 +62,8 @@ Parameters: int ; int
 Returns: 2D list of ints
 '''
 def emptyGrid(rows, cols):
-    return
+    grid=[[1]*cols]*rows
+    return grid
 
 
 '''
@@ -270,4 +271,5 @@ def runSimulation(w, h):
 if __name__ == "__main__":
 
     ## Finally, run the simulation to test it manually ##
-    runSimulation(500, 500)
+    #runSimulation(500, 500)
+  test.emptyGrid(10,10)
