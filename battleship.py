@@ -72,7 +72,15 @@ Parameters: no parameters
 Returns: 2D list of ints
 '''
 def createShip():
-    return
+    rows=random.randint(1,8)
+    cols=random.randint(1,8)
+    a=random.randint(0,1)
+    ship=[]
+    if a==0:
+        ship=[[rows-1,cols],[rows,cols],[rows+1,cols]]
+    else:
+        ship=[[rows,cols-1],[rows,cols],[rows,cols+1]]
+    return ship
 
 '''
 checkShip(grid, ship)
@@ -94,7 +102,12 @@ Parameters: 2D list of ints ; int
 Returns: 2D list of ints
 '''
 def addShips(grid, numShips):
-    return
+    for ship_count in range(numShips):
+        ship=createShip()
+        for i in ship:
+            if grid[i[0]][i[1]]==1:
+                grid[i[0]][i[1]]=2
+    return grid
 
 
 '''
@@ -276,4 +289,4 @@ if __name__ == "__main__":
 
     ## Finally, run the simulation to test it manually ##
     #runSimulation(500, 500)
-    test.testCheckShip()
+    test.testAddShips()
