@@ -28,10 +28,13 @@ def makeModel(data):
     data["rows"]=10
     data["cols"]=10
     data["Board_Size"]=500
-    data["CellSize"]=50
+    data["CellSize"]=data["Board_Size"]/data["rows"]
     data["numShips"]=5
+    comp_board=emptyGrid(data["rows"],data["cols"])
+    createShip()
+    addShips(comp_board,data["numShips"])
     data["User_Board"]=emptyGrid(10,10)
-    data["Comp_Board"]=emptyGrid(10,10)
+    data["Comp_Board"]=comp_board
     return data
 
 
@@ -303,5 +306,5 @@ def runSimulation(w, h):
 if __name__ == "__main__":
 
     ## Finally, run the simulation to test it manually ##
-    #runSimulation(500, 500)
+    # runSimulation(500, 500)   
     test.testMakeModel()
