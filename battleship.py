@@ -81,7 +81,7 @@ Returns: bool
 '''
 def checkShip(grid, ship):
     for i in ship:
-        if grid[i[0]][i[1]]!=1:
+        if grid[i[0]][i[1]]!=EMPTY_UNCLICKED:
             return False
     return True
 
