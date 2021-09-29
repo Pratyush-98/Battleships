@@ -41,8 +41,8 @@ Parameters: dict mapping strs to values ; Tkinter canvas ; Tkinter canvas
 Returns: None
 '''
 def makeView(data, userCanvas, compCanvas):
-    userCanvas=drawGrid(data,userCanvas,data["User_Board"),True)
-    compCanvas=drawGrid(data,userCanvas,data["Comp_Board"),True)
+    userCanvas=drawGrid(data,userCanvas,data["User_Board"],True)
+    compCanvas=drawGrid(data,userCanvas,data["Comp_Board"],True)
     return
 
 
@@ -139,7 +139,7 @@ def drawGrid(data, canvas, grid, showShips):
                 canvas.create_rectange(data["CellSize"]*i,data["CellSize"]*j,data["CellSize"]*i+1,data["CellSize"]*j+1,fill="yellow")
             else:
                  canvas.create_rectange(data["CellSize"]*i,data["CellSize"]*j,data["CellSize"]*i+1,data["CellSize"]*j+1,fill="blue")
-    return
+    return 
 
 
 ### WEEK 2 ###
