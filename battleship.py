@@ -30,8 +30,7 @@ def makeModel(data):
     data["Board_Size"]=500
     data["CellSize"]=data["Board_Size"]/data["rows"]
     data["numShips"]=5
-    createShip()
-    data["User_Board"]=emptyGrid(data["rows"],data["cols"])
+    data["user_Board"]=test.testGrid()
     data["Comp_Board"]= addShips(emptyGrid(data["rows"],data["cols"]),data["numShips"])
     return data
 
@@ -49,6 +48,7 @@ def makeView(data, userCanvas, compCanvas):
 keyPressed(data, events)
 Parameters: dict mapping strs to values ; key event object
 Returns: None
+
 '''
 def keyPressed(data, event):
     pass
@@ -132,6 +132,7 @@ Parameters: dict mapping strs to values ; Tkinter canvas ; 2D list of ints ; boo
 Returns: None
 '''
 def drawGrid(data, canvas, grid, showShips):
+    
     return
 
 
