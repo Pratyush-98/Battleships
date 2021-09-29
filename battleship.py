@@ -25,7 +25,14 @@ Parameters: dict mapping strs to values
 Returns: None
 '''
 def makeModel(data):
-    return
+    # data["rows"]=10
+    # data["cols"]=10
+    # data["Board_Size"]=500
+    # data["CellSize"]=data["Board_Size"]/data["rows"]
+    # data["numShips"]=5
+    # data["User_Board"]=test.testGrid()
+    # data["Comp_Board"]= addShips(emptyGrid(data["rows"],data["cols"]),data["numShips"])
+    return data
 
 
 '''
@@ -62,7 +69,13 @@ Parameters: int ; int
 Returns: 2D list of ints
 '''
 def emptyGrid(rows, cols):
-    return 
+    grid=[]
+    for i in range(rows):
+        a=[]
+        for j in range(cols):
+            a.append(1)
+        grid.append(a)
+    return grid 
 
 
 
@@ -290,5 +303,5 @@ def runSimulation(w, h):
 if __name__ == "__main__":
 
     ## Finally, run the simulation to test it manually ##
-    #runSimulation(500, 500)
+    # runSimulation(500, 500)   
     test.testAddShips()
