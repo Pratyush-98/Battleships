@@ -25,13 +25,13 @@ Parameters: dict mapping strs to values
 Returns: None
 '''
 def makeModel(data):
-    # data["rows"]=10
-    # data["cols"]=10
-    # data["Board_Size"]=500
-    # data["CellSize"]=data["Board_Size"]/data["rows"]
-    # data["numShips"]=5
-    # data["User_Board"]=test.testGrid()
-    # data["Comp_Board"]= addShips(emptyGrid(data["rows"],data["cols"]),data["numShips"])
+    data["rows"]=10
+    data["cols"]=10
+    data["Board_Size"]=500
+    data["CellSize"]=data["Board_Size"]/data["rows"]
+    data["numShips"]=5
+    data["user_Board"]=emptyGrid(data["rows"],data["cols"])
+    data["Comp_Board"]= addShips(emptyGrid(data["rows"],data["cols"]),data["numShips"])
     return data
 
 
@@ -48,6 +48,7 @@ def makeView(data, userCanvas, compCanvas):
 keyPressed(data, events)
 Parameters: dict mapping strs to values ; key event object
 Returns: None
+
 '''
 def keyPressed(data, event):
     pass
@@ -76,7 +77,6 @@ def emptyGrid(rows, cols):
             a.append(1)
         grid.append(a)
     return grid 
-
 
 
 
@@ -133,6 +133,7 @@ Parameters: dict mapping strs to values ; Tkinter canvas ; 2D list of ints ; boo
 Returns: None
 '''
 def drawGrid(data, canvas, grid, showShips):
+    
     return
 
 
@@ -307,6 +308,10 @@ if __name__ == "__main__":
     ## Finally, run the simulation to test it manually ##
 
     # runSimulation(500, 500)   
+    test.testMakeModel()
+
+
+    # runSimulation(500, 500)   
     test.testAddShips()
 
     #runSimulation(500, 500)
@@ -316,5 +321,4 @@ if __name__ == "__main__":
 
   test.testEmptyGrid()
   test.testCreateShip()
-
 
