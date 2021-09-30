@@ -151,7 +151,7 @@ Returns: bool
 '''
 def isVertical(ship):
     ship.sort()
-    if ship[0][1] and ship[1][1]==ship[2][1]:
+    if ship[0][1]==ship[2][1] and ship[1][1]==ship[2][1]:
         if ship[0][0]==ship[1][0]-1 and ship[2][0]==ship[1][0]+1 :
             return True
     return False
@@ -163,7 +163,11 @@ Parameters: 2D list of ints
 Returns: bool
 '''
 def isHorizontal(ship):
-    return
+    ship.sort()
+    if ship[0][0]==ship[2][0] and ship[1][0]==ship[2][0]:
+        if ship[0][1]==ship[1][1]-1 and ship[2][1]==ship[1][1]+1 :
+            return True
+    return False
 
 
 '''
@@ -316,4 +320,4 @@ if __name__ == "__main__":
 
     ## Finally, run the simulation to test it manually ##
     # runSimulation(500, 500)   
-    test.testIsVertical()
+    test.testIsHorizontal()
