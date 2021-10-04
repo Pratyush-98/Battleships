@@ -142,7 +142,6 @@ def drawGrid(data, canvas, grid, showShips):
             else:
 
                 canvas.create_rectangle(data["CellSize"]*col,data["CellSize"]*row,data["CellSize"]*(col+1),data["CellSize"]*(row+1),fill="blue")
-
     return 
 
 
@@ -175,6 +174,7 @@ def isHorizontal(ship):
     return False
 
 
+
 '''
 getClickedCell(data, event)
 Parameters: dict mapping strs to values ; mouse event object
@@ -184,6 +184,7 @@ def getClickedCell(data, event):
     x=event.x//data["CellSize"]
     y=event.y//data["CellSize"]
     return [y,x]
+
 
 
 '''
@@ -324,6 +325,7 @@ def runSimulation(w, h):
 
 # This code runs the test cases to check your work
 if __name__ == "__main__":
+
 
     ## Finally, run the simulation to test it manually ##
 
