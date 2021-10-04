@@ -50,6 +50,7 @@ def makeView(data, userCanvas, compCanvas):
 keyPressed(data, events)
 Parameters: dict mapping strs to values ; key event object
 Returns: None
+
 '''
 def keyPressed(data, event):
     pass
@@ -78,6 +79,7 @@ def emptyGrid(rows, cols):
             a.append(EMPTY_UNCLICKED)
         grid.append(a)
     return grid 
+
 
 
 
@@ -139,7 +141,9 @@ def drawGrid(data, canvas, grid, showShips):
                 canvas.create_rectangle(data["CellSize"]*row,data["CellSize"]*col,data["CellSize"]*(row+1),data["CellSize"]*(col+1),fill="yellow")
             else:
                 canvas.create_rectangle(data["CellSize"]*row,data["CellSize"]*col,data["CellSize"]*(row+1),data["CellSize"]*(col+1),fill="blue")
+
     return 
+
 
 
 ### WEEK 2 ###
@@ -314,6 +318,6 @@ def runSimulation(w, h):
 # This code runs the test cases to check your work
 if __name__ == "__main__":
 
-    ## Finally, run the simulation to test it manually ##
+    ## Finally, run the simulation to test it manually
     # runSimulation(500, 500)   
     test.testIsVertical()
