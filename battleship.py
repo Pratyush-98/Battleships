@@ -204,8 +204,12 @@ Parameters: 2D list of ints ; 2D list of ints
 Returns: bool
 '''
 def shipIsValid(grid, ship):
-    return
-
+    if checkShip(grid,ship):
+        if isVertical(ship):
+            return True
+        elif isHorizontal(ship):
+            return True
+    return False
 
 '''
 placeShip(data)
@@ -213,6 +217,7 @@ Parameters: dict mapping strs to values
 Returns: None
 '''
 def placeShip(data):
+
     return
 
 
@@ -331,7 +336,7 @@ if __name__ == "__main__":
     ## Finally, run the simulation to test it manually ##
 
     # runSimulation(500, 500) 
-    test.testDrawShip()
+    test.testShipIsValid()
  
 
 
