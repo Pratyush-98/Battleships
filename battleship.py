@@ -50,6 +50,7 @@ def makeView(data, userCanvas, compCanvas):
 keyPressed(data, events)
 Parameters: dict mapping strs to values ; key event object
 Returns: None
+
 '''
 def keyPressed(data, event):
     pass
@@ -78,6 +79,7 @@ def emptyGrid(rows, cols):
             a.append(EMPTY_UNCLICKED)
         grid.append(a)
     return grid 
+
 
 
 
@@ -311,5 +313,6 @@ def runSimulation(w, h):
 if __name__ == "__main__":
 
     ## Finally, run the simulation to test it manually ##
+
     # runSimulation(500, 500)   
     test.testDrawGrid()
