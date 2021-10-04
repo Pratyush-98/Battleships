@@ -147,7 +147,6 @@ def drawGrid(data, canvas, grid, showShips):
                 canvas.create_rectangle(data["CellSize"]*col,data["CellSize"]*row,data["CellSize"]*(col+1),data["CellSize"]*(row+1),fill="yellow")
             else:
                 canvas.create_rectangle(data["CellSize"]*col,data["CellSize"]*row,data["CellSize"]*(col+1),data["CellSize"]*(row+1),fill="blue")
-
     return 
 
 
@@ -336,9 +335,15 @@ def runSimulation(w, h):
 if __name__ == "__main__":
 
 
+
     ## Finally, run the simulation to test it manually ##
 
     # runSimulation(500, 500) 
     test.testDrawShip()
- 
+
+
+    test.testGetClickedCell()
+    # runSimulation(500, 500)   
+    test.testIsHorizontal()
+
 
