@@ -174,6 +174,7 @@ def isHorizontal(ship):
     return False
 
 
+
 '''
 getClickedCell(data, event)
 Parameters: dict mapping strs to values ; mouse event object
