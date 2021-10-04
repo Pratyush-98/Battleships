@@ -32,6 +32,7 @@ def makeModel(data):
     data["numShips"]=5
     data["User_Board"]=emptyGrid(data["rows"],data["cols"])
     data["Comp_Board"]= addShips(emptyGrid(data["rows"],data["cols"]),data["numShips"])
+
     data["TempShip"]= []
     return 
 
@@ -45,7 +46,6 @@ def makeView(data, userCanvas, compCanvas):
     UserCanvas=drawGrid(data,userCanvas,data["User_Board"],True)
     UserCanvas=drawShip(data,userCanvas,data["TempShip"])
     CompCanvas=drawGrid(data,compCanvas,data["Comp_Board"],True)
-    
     return
 
 
@@ -187,6 +187,7 @@ def getClickedCell(data, event):
     return [y,x]
 
 
+
 '''
 drawShip(data, canvas, ship)
 Parameters: dict mapping strs to values ; Tkinter canvas; 2D list of ints
@@ -211,13 +212,13 @@ def shipIsValid(grid, ship):
             return True
     return False
 
+
 '''
 placeShip(data)
 Parameters: dict mapping strs to values
 Returns: None
 '''
 def placeShip(data):
-
     return
 
 
@@ -337,6 +338,4 @@ if __name__ == "__main__":
 
     # runSimulation(500, 500) 
     test.testShipIsValid()
- 
-
 
