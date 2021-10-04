@@ -34,7 +34,7 @@ def testEmptyGrid():
 
     # Make sure that the grid doesn't have any aliasing problems
     g = emptyGrid(3, 3)
-    g[0][1] = "foo"
+    g[0][1] = "foo" 
     assert(g[1][1] != "foo")
     print("... done!")
 
