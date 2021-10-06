@@ -45,8 +45,7 @@ Returns: None
 def makeView(data, userCanvas, compCanvas):
     drawGrid(data,userCanvas,data["User_Board"],True)
     drawShip(data,userCanvas,data["TempShip"])
-    drawGrid(data,compCanvas,data["Comp_Board"],False)
-    
+    drawGrid(data,compCanvas,data["Comp_Board"],False)  
     return
 
 
@@ -189,6 +188,7 @@ def isHorizontal(ship):
     return False
 
 
+
 '''
 getClickedCell(data, event)
 Parameters: dict mapping strs to values ; mouse event object
@@ -198,6 +198,7 @@ def getClickedCell(data, event):
     x=int(event.x/data["CellSize"])
     y=int(event.y/data["CellSize"])
     return [y,x]
+
 
 
 '''
@@ -373,10 +374,10 @@ def runSimulation(w, h):
 # This code runs the test cases to check your work
 if __name__ == "__main__":
 
+
+
     ## Finally, run the simulation to test it manually ##
 
     runSimulation(500, 500) 
     # test.testUpdateBoard()
- 
-
 
