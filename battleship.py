@@ -33,11 +33,7 @@ def makeModel(data):
     data["User_Board"]=emptyGrid(data["rows"],data["cols"])
     data["Comp_Board"]= addShips(emptyGrid(data["rows"],data["cols"]),data["numShips"])
     data["TempShip"]= []
-<<<<<<< HEAD
     data["Userships"]=0
-=======
-
->>>>>>> 92df9363138b5e81669e8a3e46e55277b372263e
     return 
 
 
@@ -365,7 +361,6 @@ if __name__ == "__main__":
 
     ## Finally, run the simulation to test it manually ##
 
-    # runSimulation(500, 500) 
-    test.testShipIsValid()
-
+    runSimulation(500, 500) 
+    # test.testShipIsValid()
 
