@@ -60,7 +60,7 @@ Returns: None
 
 '''
 def keyPressed(data, event):
-    if event:
+    if event.keycode==13:
         makeModel(data)
     pass
 
