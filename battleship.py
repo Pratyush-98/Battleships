@@ -48,7 +48,7 @@ Returns: None
 def makeView(data, userCanvas, compCanvas):
     drawGrid(data,userCanvas,data["User_Board"],True)
     drawShip(data,userCanvas,data["TempShip"])
-    drawGrid(data,compCanvas,data["Comp_Board"],False)  
+    drawGrid(data,compCanvas,data["Comp_Board"],True)  
     drawGameOver(data,compCanvas)
     return
 
@@ -341,7 +341,7 @@ Parameters: dict mapping strs to values ; Tkinter canvas
 Returns: None
 '''
 def drawGameOver(data, canvas):
-    if data["winner"]=="user":
+    if data["Winner"]=="user":
         canvas.create_text(300, 50, text="Congratulations! You won the game", fill="green", font=('Helvetica 25 bold'))
         canvas.create_text(300, 100, text="press Enter to restart the game", fill="green", font=('Helvetica 25 bold'))
     elif data["Winner"]=="comp":
@@ -413,6 +413,6 @@ if __name__ == "__main__":
 
     ## Finally, run the simulation to test it manually ##
 
-    # runSimulation(500, 500) 
-    test.testIsGameOver()
+    runSimulation(500, 500) 
+    # test.testIsGameOver()
 
