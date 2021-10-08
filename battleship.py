@@ -33,7 +33,6 @@ def makeModel(data):
     data["User_Board"]=emptyGrid(data["rows"],data["cols"])
     data["Comp_Board"]= addShips(emptyGrid(data["rows"],data["cols"]),data["numShips"])
     data["TempShip"]= []
-
     return 
 
 
@@ -43,12 +42,9 @@ Parameters: dict mapping strs to values ; Tkinter canvas ; Tkinter canvas
 Returns: None
 '''
 def makeView(data, userCanvas, compCanvas):
-
     UserCanvas=drawGrid(data,userCanvas,data["User_Board"],True)
     UserCanvas=drawShip(data,userCanvas,data["TempShip"])
     CompCanvas=drawGrid(data,compCanvas,data["Comp_Board"],True)
-    
-
     return
 
 
@@ -179,14 +175,12 @@ def isHorizontal(ship):
     return False
 
 
-
 '''
 getClickedCell(data, event)
 Parameters: dict mapping strs to values ; mouse event object
 Returns: list of ints
 '''
 def getClickedCell(data, event):
-
     x=event.x//data["CellSize"]
     y=event.y//data["CellSize"]
     return [y,x]
@@ -216,7 +210,6 @@ def shipIsValid(grid, ship):
         elif isHorizontal(ship):
             return True
     return False
-
 '''
 placeShip(data)
 Parameters: dict mapping strs to values
