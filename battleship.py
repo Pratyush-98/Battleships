@@ -60,6 +60,8 @@ Returns: None
 
 '''
 def keyPressed(data, event):
+    if event.keycode==13:
+        makeModel(data)
     pass
 
 
@@ -192,7 +194,6 @@ def isHorizontal(ship):
         if ship[0][1]==ship[1][1]-1 and ship[2][1]==ship[1][1]+1 :
             return True
     return False
-
 
 
 '''
@@ -341,10 +342,13 @@ Returns: None
 def drawGameOver(data, canvas):
     if data["Winner"]=="user":
         canvas.create_text(300, 50, text="Congratulations! You won the game", fill="green", font=('Helvetica 25 bold'))
+        canvas.create_text(300, 100, text="press Enter to restart the game", fill="green", font=('Helvetica 25 bold'))
     elif data["Winner"]=="comp":
         canvas.create_text(300, 50, text="sorry! You lost the game", fill="red", font=('Helvetica 25 bold'))
+        canvas.create_text(300, 100, text="press Enter to restart the game", fill="red", font=('Helvetica 25 bold'))
     elif data["Winner"]=="draw":
         canvas.create_text(300, 50, text="out of moves! Its a draw", fill="orange", font=('Helvetica 25 bold'))
+        canvas.create_text(300, 100, text="press Enter to restart the game", fill="orange", font=('Helvetica 25 bold'))
     return
 
 
@@ -409,5 +413,4 @@ if __name__ == "__main__":
     ## Finally, run the simulation to test it manually ##
 
     runSimulation(500, 500) 
-    # test.testIsGameOver()
 
