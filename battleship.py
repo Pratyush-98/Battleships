@@ -33,6 +33,7 @@ def makeModel(data):
     data["User_Board"]=emptyGrid(data["rows"],data["cols"])
     data["Comp_Board"]= addShips(emptyGrid(data["rows"],data["cols"]),data["numShips"])
     data["TempShip"]= []
+    data["Userships"]=0
     return 
 
 
@@ -210,6 +211,7 @@ def shipIsValid(grid, ship):
         elif isHorizontal(ship):
             return True
     return False
+
 '''
 placeShip(data)
 Parameters: dict mapping strs to values
@@ -221,6 +223,7 @@ def placeShip(data):
     if shipIsValid(Userboard,Tempship):
         for row in Tempship:
             Userboard[row[0]][row[1]]=SHIP_UNCLICKED
+        data["Usership"]+=1
     else:
         print("ship is not valid")
     data["TempShip"]=[]
@@ -233,7 +236,17 @@ Parameters: dict mapping strs to values ; int ; int
 Returns: None
 '''
 def clickUserBoard(data, row, col):
-    
+    if data["Usership"]==5:
+        return 
+    if data["TempShip"]==[row][col]:
+        return
+    else:
+        data["TempShip"].append([row,col])
+    if len(data["TempShip"])==3:
+        placeShip(data)
+    if data["Usership"]==5:
+        print("start the game")
+
     return
 
 
@@ -344,9 +357,5 @@ if __name__ == "__main__":
 
     ## Finally, run the simulation to test it manually ##
 
-    # runSimulation(500, 500) 
-
-    test.testShipIsValid()
-
-
+    runSimulation(500, 500) 
 
