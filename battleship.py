@@ -210,15 +210,21 @@ def shipIsValid(grid, ship):
         elif isHorizontal(ship):
             return True
     return False
-
-
 '''
 placeShip(data)
 Parameters: dict mapping strs to values
 Returns: None
 '''
 def placeShip(data):
-    return
+    Userboard=data["User_Board"]
+    Tempship=data["TempShip"]
+    if shipIsValid(Userboard,Tempship):
+        for row in Tempship:
+            Userboard[row[0]][row[1]]=SHIP_UNCLICKED
+    else:
+        print("ship is not valid")
+    data["TempShip"]=[]
+    return 
 
 
 '''
@@ -227,6 +233,7 @@ Parameters: dict mapping strs to values ; int ; int
 Returns: None
 '''
 def clickUserBoard(data, row, col):
+    
     return
 
 
@@ -338,6 +345,7 @@ if __name__ == "__main__":
     ## Finally, run the simulation to test it manually ##
 
     # runSimulation(500, 500) 
+
     test.testShipIsValid()
 
 
