@@ -43,12 +43,9 @@ Parameters: dict mapping strs to values ; Tkinter canvas ; Tkinter canvas
 Returns: None
 '''
 def makeView(data, userCanvas, compCanvas):
-
     UserCanvas=drawGrid(data,userCanvas,data["User_Board"],True)
     UserCanvas=drawShip(data,userCanvas,data["TempShip"])
     CompCanvas=drawGrid(data,compCanvas,data["Comp_Board"],True)
-    
-
     return
 
 
@@ -179,14 +176,12 @@ def isHorizontal(ship):
     return False
 
 
-
 '''
 getClickedCell(data, event)
 Parameters: dict mapping strs to values ; mouse event object
 Returns: list of ints
 '''
 def getClickedCell(data, event):
-
     x=event.x//data["CellSize"]
     y=event.y//data["CellSize"]
     return [y,x]
@@ -228,7 +223,7 @@ def placeShip(data):
     if shipIsValid(Userboard,Tempship):
         for row in Tempship:
             Userboard[row[0]][row[1]]=SHIP_UNCLICKED
-            data["Usership"]+=1
+        data["Usership"]+=1
     else:
         print("ship is not valid")
     data["TempShip"]=[]
@@ -251,6 +246,7 @@ def clickUserBoard(data, row, col):
         placeShip(data)
     if data["Usership"]==5:
         print("start the game")
+
     return
 
 
@@ -362,5 +358,4 @@ if __name__ == "__main__":
     ## Finally, run the simulation to test it manually ##
 
     runSimulation(500, 500) 
-    # test.testShipIsValid()
 
