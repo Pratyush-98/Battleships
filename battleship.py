@@ -188,7 +188,6 @@ def isHorizontal(ship):
     return False
 
 
-
 '''
 getClickedCell(data, event)
 Parameters: dict mapping strs to values ; mouse event object
@@ -388,5 +387,5 @@ if __name__ == "__main__":
     ## Finally, run the simulation to test it manually ##
 
     runSimulation(500, 500) 
-    # test.testGetComputerGuess()
+
 
