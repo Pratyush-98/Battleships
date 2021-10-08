@@ -35,6 +35,8 @@ def makeModel(data):
     data["TempShip"]= []
     data["Userships"]=0
     data["Winner"]=None
+    data["Max_Turns"]=50
+    data["Number_Of_Turns"]=0
     return 
 
 
@@ -58,6 +60,8 @@ Returns: None
 
 '''
 def keyPressed(data, event):
+    if event.keycode==13:
+        makeModel(data)
     pass
 
 
@@ -72,7 +76,7 @@ def mousePressed(data, event, board):
     mouse=getClickedCell(data,event)
     if board=="user":
         clickUserBoard(data,mouse[0],mouse[1])
-    if board=="comp":
+    elif board=="comp":
         runGameTurn(data,mouse[0],mouse[1])
     pass
 
@@ -296,6 +300,9 @@ def runGameTurn(data, row, col):
         updateBoard(data,data["Comp_Board"],row,col,"user")
     Guess=getComputerGuess(data["User_Board"])
     updateBoard(data,data["User_Board"],Guess[0],Guess[1],"comp")
+    data["Number_Of_Turns"]+=1
+    if data["Number_Of_Turns"]==data["Max_Turns"]:
+        data["Winner"]="draw"
     return
 
 
@@ -334,10 +341,15 @@ Parameters: dict mapping strs to values ; Tkinter canvas
 Returns: None
 '''
 def drawGameOver(data, canvas):
-    if data["Winner"]=="user":
+    if data["winner"]=="user":
         canvas.create_text(300, 50, text="Congratulations! You won the game", fill="green", font=('Helvetica 25 bold'))
+        canvas.create_text(300, 100, text="press Enter to restart the game", fill="green", font=('Helvetica 25 bold'))
     elif data["Winner"]=="comp":
         canvas.create_text(300, 50, text="sorry! You lost the game", fill="red", font=('Helvetica 25 bold'))
+        canvas.create_text(300, 100, text="press Enter to restart the game", fill="red", font=('Helvetica 25 bold'))
+    elif data["Winner"]=="draw":
+        canvas.create_text(300, 50, text="out of moves! Its a draw", fill="orange", font=('Helvetica 25 bold'))
+        canvas.create_text(300, 100, text="press Enter to restart the game", fill="orange", font=('Helvetica 25 bold'))
     return
 
 
@@ -401,6 +413,6 @@ if __name__ == "__main__":
 
     ## Finally, run the simulation to test it manually ##
 
-    runSimulation(500, 500) 
-    # test.testIsGameOver()
+    # runSimulation(500, 500) 
+    test.testIsGameOver()
 
