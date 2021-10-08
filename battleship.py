@@ -32,7 +32,6 @@ def makeModel(data):
     data["numShips"]=5
     data["User_Board"]=emptyGrid(data["rows"],data["cols"])
     data["Comp_Board"]= addShips(emptyGrid(data["rows"],data["cols"]),data["numShips"])
-
     data["TempShip"]= []
     return 
 
@@ -334,8 +333,12 @@ def runSimulation(w, h):
 # This code runs the test cases to check your work
 if __name__ == "__main__":
 
+
+
     ## Finally, run the simulation to test it manually ##
 
     # runSimulation(500, 500) 
     test.testShipIsValid()
+
+
 
